@@ -10,7 +10,11 @@ public class FactorialCalculator {
     }
 
     private int Calculate(int number){
-        return -1;
+        if(number == 0){
+            return 1;
+        }
+
+        return number * Calculate(number - 1);
     }
 
     public int GetResult(){

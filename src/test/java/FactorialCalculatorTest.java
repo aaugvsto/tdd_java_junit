@@ -6,10 +6,29 @@ import static org.junit.Assert.assertEquals;
 public class FactorialCalculatorTest {
 
     @Test
-    public void Testa_Calculo_Fatorial_Igual_a_Zero(){
-        var result = new FactorialCalculator(0).GetResult();
+    public void Test_Calculate_Positive_Number(){
+        //Arrange
+        int number = 2;
 
-        assertEquals(1, result);
+        //Act
+        FactorialCalculator calculator = new FactorialCalculator(number);
+
+        //Assert
+        assertEquals(number, calculator.GetNumber());
+        assertEquals(2, calculator.GetResult());
+    }
+
+    @Test
+    public void Test_Calculate_Negative_Number(){
+        //Arrange
+        int number = -10;
+
+        //Act
+        FactorialCalculator calculator = new FactorialCalculator(number);
+
+        //Assert
+        assertEquals(number, calculator.GetNumber());
+        assertEquals(number, calculator.GetResult());
     }
 }
 

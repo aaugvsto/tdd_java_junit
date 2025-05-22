@@ -8,7 +8,7 @@ public class PasswordValidator {
         this._password = password;
     }
 
-    public static boolean Validate(){
+    public boolean Validate(){
         return false;
     }
 

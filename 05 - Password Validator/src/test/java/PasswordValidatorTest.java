@@ -37,7 +37,7 @@ public class PasswordValidatorTest {
     }
     
     @Test
-    public void Should_Throw_Exception_When_Password_Has_Less_Than_Two_Digits() {
+    public void Should_Throw_Exception_When_Password_Has_Less_Than_Two_Upper_Characters() {
     // Arrange
     String password = "abcdefghi1234!!"; // Sem nenhuma letra Maiúscula
     PasswordValidator validator = new PasswordValidator(password);
@@ -48,7 +48,7 @@ public class PasswordValidatorTest {
             fail("Expected IllegalArgumentException");
         } catch (IllegalArgumentException ex) {
             // Assert
-            assertEquals("A senha deve conter algum caracter maiúsculo", ex.getMessage());
+            assertEquals("A senha deve conter pelo menos 2 letras maiúsculas", ex.getMessage());
         }
     }
 

@@ -12,10 +12,15 @@ public class PasswordValidator {
         if(this._password.length() < 8) {
             throw new IllegalArgumentException("Password must be at least 8 characters");
         }
-        if (upperCaseCount < 2) {
-            throw new IllegalArgumentException("A senha deve conter pelo menos 2 letras maiúsculas");
+        int upperCaseCount = 0;
+         for(char c : this._password.toCharArray()){
+            if (Character.isUpperCase(c)) {
+                upperCaseCount++;
+            }
         }
-
+        if(upperCaseCount < 2){
+        throw new IllegalArgumentException("A senha deve conter pelo menos 2 letras maiúsculas");
+        }
         return true;
     }
 

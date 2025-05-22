@@ -36,6 +36,17 @@ public class PasswordValidator {
             throw new IllegalArgumentException("Password must be at least 1 especial character");
         }
 
+        int upperCaseCount = 0;
+        for(char c : this._password.toCharArray()){
+            if (Character.isUpperCase(c)) {
+                upperCaseCount++;
+            }
+        }
+        
+        if(upperCaseCount < 2){
+        throw new IllegalArgumentException("A senha deve conter pelo menos 2 letras maiúsculas");
+        }
+
         return true;
     }
 

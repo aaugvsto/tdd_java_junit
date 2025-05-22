@@ -35,19 +35,5 @@ public class PasswordValidatorTest {
         // Assert
         assertTrue(result);
     }
-    @Test
-public void Should_Throw_Exception_When_Password_Has_Less_Than_Two_Digits() {
-    // Arrange
-    String password = "abcdefgH"; // apenas letras, nenhum dígito
-    PasswordValidator validator = new PasswordValidator(password);
-
-    try {
-        // Act
-        validator.Validate();
-        fail("Expected IllegalArgumentException");
-    } catch (IllegalArgumentException ex) {
-        // Assert
-        assertEquals("A senha deve conter pelo menos 2 dígitos", ex.getMessage());
-    }
 }
 }

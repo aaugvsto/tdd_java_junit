@@ -13,6 +13,18 @@ public class PasswordValidator {
             throw new IllegalArgumentException("Password must be at least 8 characters");
         }
 
+        boolean hasSpecialChar = false;
+
+        for (char c : this._password.toCharArray()) {
+            if (!Character.isLetterOrDigit(c)) {
+                hasSpecialChar = true;
+            }
+        }
+
+        if(!hasSpecialChar){
+            throw new IllegalArgumentException("Password must be at least 1 especial character");
+        }
+
         return true;
     }
 

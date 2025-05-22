@@ -9,12 +9,23 @@ public class PasswordValidator {
     }
 
     public boolean Validate(){
-        if(this._password.length() < 8) {
+        if (this._password.length() < 8) {
             throw new IllegalArgumentException("Password must be at least 8 characters");
         }
 
+        int digitCount = 0;
+        for (char c : this._password.toCharArray()) {
+            if (Character.isDigit(c)) {
+                digitCount++;
+            }
+        }
+
+        if (digitCount < 2) {
+            throw new IllegalArgumentException("A senha deve conter pelo menos 2 dígitos");
+        }
+
         return true;
-    }
+    
 
     public String GetPassword(){
         return this._password;

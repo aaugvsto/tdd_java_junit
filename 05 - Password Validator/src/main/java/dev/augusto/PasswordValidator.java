@@ -9,7 +9,11 @@ public class PasswordValidator {
     }
 
     public boolean Validate(){
-        return false;
+        if(this._password.length() < 8) {
+            throw new IllegalArgumentException("Password must be at least 8 characters");
+        }
+
+        return true;
     }
 
     public String GetPassword(){

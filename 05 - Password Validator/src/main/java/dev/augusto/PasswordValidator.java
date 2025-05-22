@@ -23,6 +23,18 @@ public class PasswordValidator {
         if (digitCount < 2) {
             throw new IllegalArgumentException("A senha deve conter pelo menos 2 dígitos");
         }
+      
+        boolean hasSpecialChar = false;
+
+        for (char c : this._password.toCharArray()) {
+            if (!Character.isLetterOrDigit(c)) {
+                hasSpecialChar = true;
+            }
+        }
+
+        if(!hasSpecialChar){
+            throw new IllegalArgumentException("Password must be at least 1 especial character");
+        }
 
         return true;
     }

@@ -26,7 +26,7 @@ public class PasswordValidatorTest {
     @Test
     public void Should_Return_True_When_Password_Has_At_Least_Eight_Characters() {
         //Arrange
-        String password = "12345678";
+        String password = "12345678AA@";
         PasswordValidator validator = new PasswordValidator(password);
 
         //Act
